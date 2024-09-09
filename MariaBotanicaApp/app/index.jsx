@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 
-export default function Page() {
+
+function HomePage({ navigation}) {
+  
   return (
     <View style={styles.container}>
       <View style={styles.divtesto}>
@@ -34,7 +36,7 @@ export default function Page() {
     
      
       <View style={styles.botaos}>
-      <TouchableOpacity style={[styles.botao, styles.shadowBotao]}>
+      <TouchableOpacity onPress={()=> navigation.navigate("MarketPlace")}  style={[styles.botao, styles.shadowBotao]}>
         <Text style={styles.botaotext}>MarketPlace</Text>
       </TouchableOpacity>
       <TouchableOpacity style={[styles.botao, styles.shadowBotao]}>
@@ -112,3 +114,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
   }
 });
+
+export default HomePage;
